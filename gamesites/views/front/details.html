@@ -1,0 +1,53 @@
+{{ >header }}
+	<section class="main details">
+		{{ #result }}
+		<h1>{{ name }} ({{ parent_name }})</h1>
+		<table cellpadding="5" cellspacing="0">
+			<thead>
+				<tr>
+					<th colspan="2"><h2>Site Information</h2></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Category:</td>
+					<td><a href="{{ parent_url }}">{{ parent_name }}</a></td>
+				</tr>
+				<tr>
+					<td>Site Name:</td>
+					<td>{{ name }}</td>
+				</tr>
+				<tr>
+					<td>Current Ranks:</td>
+					<td>{{ hits }}</td>
+				</tr>
+				<tr>
+					<td>Site URL:</td>
+					<td><a href="/out/">{{ url }}</a></td>
+				</tr>
+				<tr>
+					<td>Date Signed Up:</td>
+					<td>{{ signed_up }}</td>
+				</tr>
+				<tr>
+					<td>Banner:</td>
+					<td>{{ banner }} {{ ^banner }} n/a {{ /banner }}</td>
+				</tr>
+				<tr>
+					<td>Is an Advertiser:</td>
+					<td>{{ advertiser }}</td>
+				</tr>
+				<tr>
+					<td>Site Description:</td>
+					<td>{{ description }}</td>
+				</tr>
+				<tr>
+					<td>Active:</td>
+					<td>{{ active }}</td>
+				</tr>
+			</tbody>
+		</table>
+		{{ /result }}
+	</section>
+	{{ >sidebar }}
+{{ >footer }}

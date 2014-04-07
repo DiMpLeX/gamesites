@@ -1,0 +1,281 @@
+/* Fonts
+---------------------------------------------------------------*/
+
+/* Global
+---------------------------------------------------------------*/
+/*.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.clearfix { display: inline-block; }*/
+html[xmlns] .clearfix { display: block; }
+* html .clearfix { height: 1%; }
+
+.block:before, 
+.block:after { display: table; line-height: 0; content: ""; clear: both; }
+
+.fluid-center { width: 80%; margin: 0 auto; }
+.fixed-center { margin: 0 auto; width: 960px; }
+
+.txt-center { text-align: center; }
+
+.ad-section { 
+	background-color: #9FBCE3;
+	border: 1px solid gray; 
+	margin-bottom: 10px;
+	padding: 5px;
+	text-align: center; 
+}
+
+a:visited, a:link { color: #2293d4; text-decoration: none; }
+a:hover { color: #006699; text-decoration: underline; }
+
+i { font-style: italic; }
+p { font-size: 12px; line-height: 1.3em; margin-bottom: 12px; }
+
+strong, b { font-weight: bold; }
+
+/* Header
+---------------------------------------------------------------*/
+header {
+	background: rgb(71,182,255); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(71,182,255,1) 0%, rgba(138,209,255,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(71,182,255,1)), color-stop(100%,rgba(138,209,255,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(71,182,255,1) 0%,rgba(138,209,255,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(71,182,255,1) 0%,rgba(138,209,255,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(71,182,255,1) 0%,rgba(138,209,255,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(71,182,255,1) 0%,rgba(138,209,255,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#47b6ff', endColorstr='#8ad1ff',GradientType=0 ); /* IE6-9 */
+	border-radius: 10px;
+	margin: 10px auto;
+}
+
+.menu { padding-bottom: 15px; padding-left: 10px; }
+.menu li {
+	background-color: #ffffff;
+	border-radius: 5px;
+	cursor: pointer;
+	display: inline-block;
+	padding: 3px 7px 7px;
+}
+.menu li:hover { background-color: #003366; }
+.menu li:hover a { color: #ffffff; }
+.menu li a { color: #2293d4; font-weight: bold; font-size: 10px; }
+
+/* Body
+---------------------------------------------------------------*/
+.body { 
+	background: rgb(0,118,200); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(0,118,200,1) 0%, rgba(185,221,244,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,118,200,1)), color-stop(100%,rgba(185,221,244,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(0,118,200,1) 0%,rgba(185,221,244,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(0,118,200,1) 0%,rgba(185,221,244,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(0,118,200,1) 0%,rgba(185,221,244,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(0,118,200,1) 0%,rgba(185,221,244,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0076c8', endColorstr='#b9ddf4',GradientType=0 ); /* IE6-9 */
+	border-top: 25px solid #003466;
+	min-height: 700px;
+	color: #777777;
+	font-family: 'Verdana';
+	font-size: 12px;
+}
+
+.content { background-color: #ffffff; border-radius: 7px 7px 0 0; padding: 10px; }
+.content .main > h1,
+.content section:first-child h1 { 
+	background: #f0f4df;
+	color: #003366;
+	font-family: "Trebuchet MS";
+	font-size: 26px;
+	font-weight: bold;
+	letter-spacing: 0;
+	line-height: 1.3em;
+	margin-bottom: 20px;
+	text-align: center; 
+}
+
+.content section h3 { 
+	color: #6699FF;
+	font-size: 17px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.content section .games { margin-bottom: 30px; }
+.content section .games li { 
+	display: inline-block;
+	font-size: 12px;
+	margin-bottom: 5px;
+	width: 25%;
+}
+
+.content section .games li a { color: #2293d4; text-decoration: none; }
+
+.main { display: inline-block; width: 80%; }
+.main table {
+	color: #777;
+	margin: 20px 0;
+	width: 100%;
+}
+
+.main table thead { 
+	background-color: #f8ffda;
+	border-bottom: solid 1px #dae1be;
+	border-top: solid 1px #dae1be;
+	font-family: "Trebuchet MS";
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: -1px;
+	text-align: left;
+}
+.main table thead tr th { padding: 7px 20px; vertical-align: middle; }
+.main table tbody tr td { 
+	border-bottom: 1px solid #cbe2ed; 
+	font-family: 'Verdana';
+	font-size: 12px;
+	padding: 10px 0;
+	vertical-align: middle; 
+}
+.main table tbody tr td:nth-child(1) span { 
+	display: block; 
+	font-family: 'Arial';
+	font-size: 14px;
+	font-weight: bold; 
+}
+.main table tbody tr td a { 
+	color: #2293d4; 
+	display: block;
+	font-size: 12px; 
+	text-decoration: none; 
+}
+.main table tbody tr td a:hover { color: #006699 !important; text-decoration: underline !important; }
+
+.sidebar {
+	background: #f0f4df;
+	display: inline-block;
+	padding: 5px 0 10px;
+	vertical-align: top;
+	width: 19%;
+}
+
+.sidebar form { padding: 0 10px; margin-bottom: 10px; }
+.sidebar form input {
+	box-sizing: border-box;
+	color: #666;
+	font-family: 'Verdana';
+	width: 100%;
+}
+.sidebar form input[type="submit"] { font-size: 12px; width: auto; }
+.sidebar .widget { margin: 20px 0; }
+.sidebar .widget h3 { 
+	background: #dfe5c4;
+	color: #003366;
+	font-family: "Trebuchet MS";
+	font-size: 16px;
+	letter-spacing: -1px;
+	padding: 3px 0px 3px 10px;
+}
+.sidebar .widget ul { 
+	font-family: 'Verdana';
+	padding: 5px 10px;
+	margin: 0px;
+	margin-bottom: 10px;
+ }
+.sidebar .widget ul li a { color: #2293d4; font-size: 11px; text-decoration: underline; }
+.sidebar .widget ul li a:hover { color: #006699; }
+
+/* Private Server List */
+.server-list table thead tr th:nth-child(1) { background: url(../images/rank.png) left center no-repeat; }
+.server-list table thead tr th:nth-child(2) { 
+	background: url(../images/site.png) left center no-repeat;
+	width: 81%;
+}
+.server-list table thead tr th:nth-child(3) { 
+	background: url(../images/inthismonth.png) left center no-repeat;
+	font-family: 'Verdana';
+	font-size: 9px; 
+}
+.server-list table thead tr th:nth-child(4) {
+	background: url(../images/outthismonth.png) left center no-repeat;
+	font-family: 'Verdana';
+	font-size: 9px; 
+}
+.server-list table tbody tr td:not(:nth-child(2)) { text-align: center; }
+.server-list table tbody tr td:nth-child(1) small { font-size: 10px !important; }
+.server-list table tbody tr td:nth-child(1) small a { 
+	color: #2293d4; 
+	display: inline-block;
+	font-size: 10px !important; 
+	text-decoration: none; 
+}
+
+/* Private Server Details */
+.details table tbody tr td:first-child { font-weight: bold; }
+
+/* Terms of Agreement Page */
+.toa > div { 
+	border: 1px dashed black; 
+	margin: 0 auto;
+	padding: 15px; 
+	width: 90%; 
+}
+.toa ul li { 
+	display: inline-block; 
+	font-weight: bold; 
+	font-size: 12px;
+	margin: 20px auto;
+}
+
+/* Signup */
+.signup form { 
+	color: #777777;
+	font-size: 12px; 
+	margin: 20px auto; 
+}
+.signup form .form-row { margin-bottom: 10px; }
+.signup form .form-row input {
+	padding: 2px;
+	text-indent: 5px;
+	width: 30%;
+}
+.signup form input[type="submit"] { color: #777777; cursor: pointer; margin-top: 10px; }
+.signup form .form-row label { cursor: pointer; display: inline-block; width: 15%; }
+
+/* Confirm */
+.confirm .embed { border: 1px black dashed; margin: 0 auto 20px; padding: 10px; width: 90%; }
+.confirm h1:first-child ~ * { margin-left: 20px; margin-right: 20px; }
+
+
+/* Footer
+---------------------------------------------------------------*/
+footer { 
+	background-color: #F0F4DF; 
+	border-radius: 0 0 7px 7px; 
+	color: #777; 
+	font-size: 12px; 
+	font-weight: bold;
+	padding: 10px 10px 20px; 
+}
+footer a { color: #2293d4;  text-decoration: none; }
+footer a:hover { color: #006699; text-decoration: underline; }
+
+/* Media Queries
+---------------------------------------------------------------*/
+
+/* Large desktop */
+@media (min-width: 1200px) { }
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { }
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { }
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) { }
+
+/* CSS Hacks
+---------------------------------------------------------------*/

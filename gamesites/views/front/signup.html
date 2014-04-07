@@ -1,0 +1,53 @@
+{{ >header }}
+
+	<section class="signup">
+		<h1>{{ header }}</h1>
+		<strong>You must fill out all fields except for site banner</strong>
+
+		<form method="POST" action="signup">
+			<div class="form-row">
+				<label for="name">Site Name:</label>
+				<input id="name" type="text" name="name" required />
+			</div>
+
+			<div class="form-row">
+				<label for="url">Site URL:</label>
+				<input id="url" type="url" name="url" required />
+			</div>
+
+			<div class="form-row">
+				<label for="desc">Site Description:</label>
+				<input id="desc" type="text" name="desc" required />
+			</div>
+
+			<div class="form-row">
+				<label for="banner">Site Banner (url):</label>
+				<input id="banner" type="text" name="banner" disabled />
+					(this is an advertising feature. Once you are logged in you can learn more.)
+					<strong>Max Size: 468x60px, 50KB</strong>
+			</div>
+
+			<div class="form-row">
+				<label for="username">Username:</label>
+				<input id="username" type="text" name="username" required />
+			</div>
+
+			<div class="form-row">
+				<label for="password">Password:</label>
+				<input id="password" type="password" name="password" required />
+			</div>
+
+			<div class="form-row">
+				<label for="repeat_password">Repeat Password:</label>
+				<input id="repeat_password" type="password" name="repeat_password" required />
+			</div>
+
+			<div class="form-row">
+				<label for="email">Your Email:</label>
+				<input id="email" type="email" name="email" required />
+			</div>	
+			<input type="submit" value="Create Account &raquo;" />
+		</form>
+	</section>
+
+{{ >footer }}

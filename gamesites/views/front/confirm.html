@@ -1,0 +1,36 @@
+{{ >header }}
+	<section class="confirm">
+		<h1>{{ header }}</h1>
+		<p>Your account was created successfully.</p>
+
+		<p>Please note that as we are a topsite list you <b>must</b> link to our site to get traffic from us. The HTML (must be copy pasted to your site) you need to use is as follows:</p>
+
+		<div class="embed">
+			&lt;!--Begin GameSites200 Vote--&gt;&lt;p&gt;&lt;a href="{{ main_url }}{{ url }}/in/?id={{ id }}"&gt;
+			&lt;img src="{{ main_url }}{{ url }}/vote.gif" alt="Vote on the {{ name }} Top 200" border="0"&gt;&lt;/a&gt;
+			&lt;br&gt;
+			&lt;a href="{{ main_url }}{{ url }}/"&gt;
+			&lt;img src="{{ main_url }}track.gif" alt="{{ name }} Top 200 - Cheats Free Resources" border="0"&gt;&lt;/a&gt;&lt;/p&gt;
+			&lt;!--End Game Sites 200 Code--&gt;
+		</div>
+
+		<p>This will look like as follows:</p>
+		<div>
+			<p><a href="{{ main_url }}{{ url }}/in.php?id={{ id }}">
+					<img data-cfsrc="{{ main_url }}{{ url }}/vote.gif" alt="Vote on the {{ name }} Top 200" border="0" 
+					src="http://www.gamesites200.com/{{ url }}/vote.gif">
+				</a>
+				<br>
+				<a href="{{ main_url }}{{ url }}/">
+					<img data-cfsrc="{{ main_url }}track.gif" alt="{{ name }} Top 200 - Cheats Free Resources" 
+					border="0" src="http://www.gamesites200.com/track.gif">
+				</a>
+			</p>
+		</div>
+
+		<p>This HTML code will also be emailed to you.</p>
+
+		<p>You can also now <a href="/login">login</a> (your Site ID is {{ id }}) to update your site information, 
+		view statistics, and order a banner in listing (great for getting traffic at a low cost).</p>
+	</section>
+{{ >footer }}

@@ -1,0 +1,32 @@
+<section class="sidebar">
+	<form method="get" action="search">
+		<input name="q" id="q" type="search">
+		<input id="search" name="submit" value="Search &raquo;" type="submit">
+	</form>
+	<div class="fb-like-box" data-href="https://www.facebook.com/gamesites200" data-colorscheme="light" data-show-faces="false" data-header="true" data-stream="false" data-show-border="true"></div>
+
+	<div class="widget">
+		<h3>Site</h3>
+		<ul>
+			<li><a href="/">Game Sites</a></li>
+			<li><a href="/login">Login to List</a></li>
+			<li><a href="join">Add Site / Join List</a></li>
+			<li><a href="http://www.gs200.com/">Gaming Forums</a></li>
+			<li><a href="/stats">Site Stats</a></li>
+			<li><a href="/how">How It Works</a></li>
+			<li><a href="/advertise">Advertise</a></li>
+		</ul>
+	</div>
+
+	{{ #main }}
+	<div class="widget">
+		<h3>{{ name }}</h3>
+		<ul>
+			{{ #childs }}
+				<li><a href="{{ url }}">{{ name }}</a></li>
+			{{ /childs }}
+		</ul>
+	</div>
+	{{ /main }}
+	<div class="ad-section"></div>
+</section><!-- .sidebar -->

@@ -1,0 +1,55 @@
+{{ >header }}
+	<section class="main server-list">
+		<h1>{{ parent_name }} {{ header }}</h1>
+		<div class="ad-section">
+			AD Section
+		</div>
+		<p class="txt-center">Put Your Banner Here</p>
+
+		<table>
+		    <thead>
+		        <tr>
+		         	<th>Rank</th>
+		         	<th>Site</th>
+		         	<th>In This Month</th>
+		         	<th>Out This Month</th>
+		      	</tr>
+		   	</thead>
+		   	<tbody>
+	      		{{ #result }}
+	      		<tr>
+		      		<td>
+		      			<span>{{ idx }}</span>
+		      			<small>[<a href="details-{{ _id }}/?parent={{ parent_id }}">Details</a>]</small>
+		      		</td>
+		      		<td>
+		      			<a href="{{ url }}" target="_blank">{{ name }}</a>
+		      			{{ description }}
+		      		</td>
+		      		<td>{{ hits }}</td>
+		      		<td>{{ this_month }}</td>
+	      		</tr>
+				{{ /result }}
+				{{ ^result }}
+	      		<tr>
+	      			<td></td>
+	      			<td><h1>No Result found!</h1></td>
+	      			<td></td>
+	      			<td></td>
+	      		</tr>
+				{{ /result }}
+		   	</tbody>
+		</table>
+	</section><!-- .main -->
+	{{ >sidebar }}
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=1466802340214731";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+{{ >footer }}

@@ -1,0 +1,16 @@
+{{ >header }}
+
+	<section>
+		<h1>{{ header }}</h1>
+		
+		{{ #main }}
+		<h3>{{ name }}</h3>
+		<ul class="games">
+			{{ #childs }}
+				<li><a href="{{ url }}">{{ name }}</a></li>
+			{{ /childs }}
+		</ul>
+		{{ /main }}
+	</section>
+
+{{ >footer }}
