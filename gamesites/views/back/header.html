@@ -4,12 +4,11 @@
 		<meta charset="utf-8" />
 		<title>{{ title }}</title>
 
-		<meta name="description" content="User login page" />
+		<meta name="description" content="{{ meta_contant }}" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="shorcut icon" type="image/x-ico" href="/images/favicon.ico">
 
 		<!-- basic styles -->
-		<link rel="stylesheet" href="/stylesheets/reset.css">
 		<link rel="stylesheet" href="/stylesheets/style.css">
 		<link href="/stylesheets/bootstrap.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="/stylesheets/font-awesome.min.css" />
@@ -22,16 +21,18 @@
 		<!-- page specific plugin styles -->
 
 		<!-- fonts -->
-
 		<link rel="stylesheet" href="/stylesheets/ace-fonts.css" />
 
 		<!-- ace styles -->
-
 		<link rel="stylesheet" href="/stylesheets/ace.min.css" />
 		<link rel="stylesheet" href="/stylesheets/ace-rtl.min.css" />
+		<link rel="stylesheet" href="/stylesheets/ace-skins.min.css" />
+
+		<!-- ace settings handler -->
+		<script src="/javascripts/ace-extra.min.js"></script>
 
 		<!--[if lte IE 8]>
-		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+			<link rel="stylesheet" href="assets/css/ace-ie.min.css" />
 		<![endif]-->
 
 		<!-- inline styles related to this page -->
@@ -39,9 +40,25 @@
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
 		<!--[if lt IE 9]>
-		<script src="assets/js/html5shiv.js"></script>
-		<script src="assets/js/respond.min.js"></script>
+			<script src="/javascripts/html5shiv.js"></script>
+			<script src="/javascripts/respond.min.js"></script>
 		<![endif]-->
+
+		<!--[if !IE]> -->
+			<script type="text/javascript">
+				window.jQuery || document.write("<script src='/javascripts/jquery-2.0.3.min.js'>"+"<"+"/script>");
+			</script>
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+			<script type="text/javascript">
+				window.jQuery || document.write("<script src='/javascripts/jquery-1.10.2.min.js'>"+"<"+"/script>");
+			</script>
+		<![endif]-->
+
+		<script type="text/javascript">
+			if("ontouchend" in document) document.write("<script src='/javascripts/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script>
 	</head>
 
 	<body>

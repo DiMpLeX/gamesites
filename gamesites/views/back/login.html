@@ -5,22 +5,31 @@
 		<div class="main-content">
 			<div class="row">
 				<div class="col-sm-10 col-sm-offset-1">
+					<div class="logo center">
+						<h1>
+							<a href="/" alt="GAME SITES 200 - Top Gaming Game Sites" class="logo">
+								<img src="/images/logo.png">
+							</a>
+						</h1>
+					</div>
 					<div class="login-container">
-						<div class="center">
-							<h1>
-								<i class="icon-leaf green"></i>
-								<span class="red">GAMESITES</span>
-								<span class="white">200</span>
-							</h1>
-							<h4 class="blue">&copy; Company Name</h4>
-						</div>
-
 						<div class="space-6"></div>
 
 						<div class="position-relative">
 							<div id="login-box" class="login-box visible widget-box no-border">
 								<div class="widget-body">
 									<div class="widget-main">
+										{{ #error }}
+										<div class="alert alert-danger">
+											<strong>
+												<i class="icon-remove"></i>
+												Oh snap!
+											</strong>
+
+											User not Recognized!
+											<br>
+										</div>
+										{{ /error }}
 										<h4 class="header blue lighter bigger">
 											<i class="icon-coffee green"></i>
 											Please Enter Your Information
@@ -28,8 +37,24 @@
 
 										<div class="space-6"></div>
 
-										<form method="POST" action="logging">
+										<form method="POST" action="/logging">
 											<fieldset>
+												{{ #error }}
+												<label class="block clearfix has-error">
+													<span class="block input-icon input-icon-right">
+														<input type="text" class="form-control" placeholder="Username" name="username" />
+														<i class="icon-remove-sign"></i>
+													</span>
+												</label>
+
+												<label class="block clearfix has-error">
+													<span class="block input-icon input-icon-right">
+														<input type="password" class="form-control" placeholder="Password" name="password" />
+														<i class="icon-remove-sign"></i>
+													</span>
+												</label>
+												{{ /error }}
+												{{ ^error }}
 												<label class="block clearfix">
 													<span class="block input-icon input-icon-right">
 														<input type="text" class="form-control" placeholder="Username" name="username" />
@@ -43,6 +68,7 @@
 														<i class="icon-lock"></i>
 													</span>
 												</label>
+												{{ /error }}
 
 												<div class="space"></div>
 

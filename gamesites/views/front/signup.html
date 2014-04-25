@@ -1,32 +1,11 @@
 {{ >header }}
 
 	<section class="signup">
-		<h1>{{ header }}</h1>
-		<strong>You must fill out all fields except for site banner</strong>
-
-		<form method="POST" action="signup">
-			<div class="form-row">
-				<label for="name">Site Name:</label>
-				<input id="name" type="text" name="name" required />
-			</div>
-
-			<div class="form-row">
-				<label for="url">Site URL:</label>
-				<input id="url" type="url" name="url" required />
-			</div>
-
-			<div class="form-row">
-				<label for="desc">Site Description:</label>
-				<input id="desc" type="text" name="desc" required />
-			</div>
-
-			<div class="form-row">
-				<label for="banner">Site Banner (url):</label>
-				<input id="banner" type="text" name="banner" disabled />
-					(this is an advertising feature. Once you are logged in you can learn more.)
-					<strong>Max Size: 468x60px, 50KB</strong>
-			</div>
-
+		{{ #exist_error }}
+			<h1>Account already exist.</h1>
+		{{ /exist_error }}
+		
+		<form method="POST" action="/join/signup">
 			<div class="form-row">
 				<label for="username">Username:</label>
 				<input id="username" type="text" name="username" required />

@@ -55,16 +55,16 @@ header {
 }
 
 .menu { padding-bottom: 15px; padding-left: 10px; }
-.menu li {
+.menu li { cursor: pointer; display: inline-block; }
+.menu li a:hover { background-color: #003366; color: #ffffff; }
+.menu li a { 
 	background-color: #ffffff;
 	border-radius: 5px;
-	cursor: pointer;
-	display: inline-block;
-	padding: 3px 7px 7px;
+	color: #2293d4; 
+	font-weight: bold; 
+	font-size: 10px; 
+	padding: 7px;
 }
-.menu li:hover { background-color: #003366; }
-.menu li:hover a { color: #ffffff; }
-.menu li a { color: #2293d4; font-weight: bold; font-size: 10px; }
 
 /* Body
 ---------------------------------------------------------------*/
@@ -234,6 +234,7 @@ header {
 	color: #777777;
 	font-size: 12px; 
 	margin: 20px auto; 
+	text-align: center;
 }
 .signup form .form-row { margin-bottom: 10px; }
 .signup form .form-row input {
@@ -243,11 +244,43 @@ header {
 }
 .signup form input[type="submit"] { color: #777777; cursor: pointer; margin-top: 10px; }
 .signup form .form-row label { cursor: pointer; display: inline-block; width: 15%; }
+.signup form .form-row select { color: #777777; font-weight: bold; padding: 5px; width: 31%; }
 
 /* Confirm */
 .confirm .embed { border: 1px black dashed; margin: 0 auto 20px; padding: 10px; width: 90%; }
 .confirm h1:first-child ~ * { margin-left: 20px; margin-right: 20px; }
 
+/* Login */
+.login-layout {
+	background: rgb(71,182,255); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(71,182,255,1) 0%, rgba(138,209,255,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(71,182,255,1)), color-stop(100%,rgba(138,209,255,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(71,182,255,1) 0%,rgba(138,209,255,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(71,182,255,1) 0%,rgba(138,209,255,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(71,182,255,1) 0%,rgba(138,209,255,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(71,182,255,1) 0%,rgba(138,209,255,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#47b6ff', endColorstr='#8ad1ff',GradientType=0 ); /* IE6-9 */
+}
+.login-layout .header.blue { font-size: 18px; }
+.login-layout .logo img { margin-right: 15px; }
+.login-layout .widget-box { margin-top: 30px; }
+
+/* Add Private Server */
+.add-private select { font-weight: bold; }
+.add-private textarea { 
+	height: 100px; 
+	overflow: hidden; 
+	resize: horizontal; 
+	word-wrap: break-word; 
+}
+
+/* Sites */
+.sites textarea { 
+	height: 100px; 
+	overflow: hidden; 
+	resize: horizontal; 
+	word-wrap: break-word; 
+}
 
 /* Footer
 ---------------------------------------------------------------*/

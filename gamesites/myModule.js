@@ -49,7 +49,6 @@ function encryptPass(password) {
 }
 module.exports.encryptPass = encryptPass;
 
-
 // var public = {};
 
 // public.getCategories = function(callback) {

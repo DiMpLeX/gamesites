@@ -6,16 +6,14 @@ var express = require('express'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
     cons = require('consolidate'),
-    RedisStore = require('connect-redis')(express);
+    RedisStore = require('connect-redis')(express),
+    redis = require('redis').createClient(),
+    app = module.exports = express();
 
 // var routes = require('./routes');
 // var users = require('./routes/user');
 
-
-var app = module.exports = express();
 // var session = require('express-session');
-
-var redis = require('redis').createClient();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

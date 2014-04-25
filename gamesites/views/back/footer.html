@@ -1,31 +1,15 @@
 
 		<!-- basic scripts -->
 
-		<!--[if !IE]> -->
+		<!-- page specific plugin scripts -->
+		<script src="/javascripts/bootstrap.min.js"></script>
+		<script src="/javascripts/typeahead-bs2.min.js"></script>
 
-		<script type="text/javascript">
-			window.jQuery || document.write("<script src='javascripts/jquery-2.0.3.min.js'>"+"<"+"/script>");
-		</script>
-
-		<!-- <![endif]-->
-
-		<!--[if IE]>
-<script type="text/javascript">
- window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
-</script>
-<![endif]-->
-
-		<script type="text/javascript">
-			if("ontouchend" in document) document.write("<script src='javascripts/jquery.mobile.custom.min.js'>"+"<"+"/script>");
-		</script>
+		<!-- ace scripts -->
+		<script src="/javascripts/ace-elements.min.js"></script>
+		<script src="/javascripts/ace.min.js"></script>
 
 		<!-- inline scripts related to this page -->
-
-		<script type="text/javascript">
-			function show_box(id) {
-			 jQuery('.widget-box.visible').removeClass('visible');
-			 jQuery('#'+id).addClass('visible');
-			}
-		</script>
+		<script type="text/javascript" src="/javascripts/custom.js"></script>
 	</body>
 </html>
