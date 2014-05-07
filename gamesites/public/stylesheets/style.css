@@ -266,7 +266,7 @@ header {
 .login-layout .widget-box { margin-top: 30px; }
 
 /* Add Private Server */
-.add-private select { font-weight: bold; }
+.add-private select { font-size: 15px; font-weight: bold; }
 .add-private textarea { 
 	height: 100px; 
 	overflow: hidden; 

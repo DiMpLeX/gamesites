@@ -163,18 +163,18 @@
 						<div class="col-xs-12">
 							<!-- PAGE CONTENT BEGINS -->
 							
-							<h3>Site Information {{ name }}</h3>
+							<h3>Site Information</h3><hr />
 							{{ #server }}
-							{{ #game }}
-							<h2 class="text-center">{{ name }}</h2>
-							<hr>
-
+							
+							<h2 class="text-center">{{ game }}</h2>
 							<form method="POST" class="form-horizontal" action="/dashboard/update_server" role="form">
+								<input type="hidden" name="id" value="{{ _id }}" />
+
 								<div class="form-group">
 									<label class="col-sm-3 control-label no-padding-right" for="site_name"> Site Name </label>
 
 									<div class="col-sm-9">
-										<input type="text" id="site_name" placeholder="Site Name" class="col-xs-10 col-sm-8" value="{{ site_name }}" />
+										<input type="text" name="site_name" id="site_name" placeholder="Site Name" class="col-xs-10 col-sm-8" value="{{ site_name }}" />
 									</div>
 								</div>
 
@@ -184,7 +184,7 @@
 									<label class="col-sm-3 control-label no-padding-right" for="site_url"> Site URL </label>
 
 									<div class="col-sm-9">
-										<input type="url" id="site_url" placeholder="Site Name" class="col-xs-10 col-sm-8" value="{{ site_url }}" />
+										<input type="url" name="site_url" id="site_url" placeholder="Site Name" class="col-xs-10 col-sm-8" value="{{ site_url }}" />
 									</div>
 								</div>
 
@@ -194,7 +194,7 @@
 									<label class="col-sm-3 control-label no-padding-right" for="site_banner"> Site Banner (URL) </label>
 
 									<div class="col-sm-9">
-										<input type="url" id="site_banner" placeholder="Site Banner" class="col-xs-10 col-sm-8" />
+										<input type="url" name="site_banner" id="site_banner" placeholder="Site Banner" class="col-xs-10 col-sm-8" value="{{ site_banner }}"/>
 									</div>
 								</div>
 
@@ -204,7 +204,8 @@
 									<label class="col-sm-3 control-label no-padding-right" for="site_email"> Email </label>
 
 									<div class="col-sm-9">
-										<input type="email" id="site_email" placeholder="Site Email" class="col-xs-10 col-sm-8" value="{{ #user }}{{ email }}{{ /user }}" />
+										<input type="email" name="site_email" id="site_email" placeholder="Site Email" class="col-xs-10 col-sm-8" 
+										value="{{ site_email }}" />
 									</div>
 								</div>
 
@@ -214,7 +215,7 @@
 									<label class="col-sm-3 control-label no-padding-right" for="site_desc"> Site Description </label>
 
 									<div class="col-sm-9">
-										<textarea id="site_desc" class="col-xs-10 col-sm-8 autosize-transition"
+										<textarea name="site_desc" id="site_desc" class="col-xs-10 col-sm-8 autosize-transition"
 										placeholder="Site Description" name="site_desc">{{ site_desc }}</textarea>
 									</div>
 								</div>
@@ -231,8 +232,123 @@
 										</button>
 									</div>
 								</div>
-							</form>
+							</form><hr />
 
+							<h3>Site Statistics</h3><hr />
+							<div class="statistics">
+								<div class="row">
+									<div class="col-xs-3 no-padding-right text-right">
+										<strong>Rankings:</strong>
+									</div>
+
+									<div class="col-xs-9">
+										<span>0</span>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-xs-3 no-padding-right text-right">
+										<span>Current Rank:</span>
+									</div>
+
+									<div class="col-xs-9">
+										<span>n/a</span>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-xs-3 no-padding-right text-right">
+										<span>Rank Yesterday:</span>
+									</div>
+
+									<div class="col-xs-9">
+										<span>0</span>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-xs-3 no-padding-right text-right">
+										<span>Highest Rank in Last 31 Days:</span>
+									</div>
+
+									<div class="col-xs-9">
+										<span>0</span>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-xs-3 no-padding-right text-right">
+										<span>Lowest Rank in Last 31 Days:</span>
+									</div>
+
+									<div class="col-xs-9">
+										<span>0</span>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-xs-3 no-padding-right text-right">
+										<span>In Today:</span>
+									</div>
+
+									<div class="col-xs-9">
+										<span>0</span>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-xs-3 no-padding-right text-right">
+										<span>Out Today:</span>
+									</div>
+
+									<div class="col-xs-9">
+										<span>0</span>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-xs-3 no-padding-right text-right">
+										<span>In this Month:</span>
+									</div>
+
+									<div class="col-xs-9">
+										<span>0</span>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-xs-3 no-padding-right text-right">
+										<span>In for Last 31 Days:</span>
+									</div>
+
+									<div class="col-xs-9">
+										<span>0</span>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-xs-3 no-padding-right text-right">
+										<span>Out this Month:</span>
+									</div>
+
+									<div class="col-xs-9">
+										<span>0</span>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-xs-3 no-padding-right text-right">
+										<span>Out for Last 31 Days:</span>
+									</div>
+
+									<div class="col-xs-9">
+										<span>0</span>
+									</div>
+								</div>
+							</div>
+							<hr />
+							<div class="space-12"></div>
+							
 							<div class="row">
 								<div class="col-xs-12">
 									<div class="widget-box">
@@ -246,18 +362,59 @@
 										<div class="widget-body">
 											<div class="widget-main">
 												<pre class="prettyprint linenums">&lt;!--Begin GameSites200 Vote--&gt;
-&lt;p&gt;&lt;a href="{{ main_url }}dashboard/in/{{ _id }}"&gt;&lt;img src="{{ main_url }}{{ url }}vote.gif" alt="Vote on the {{ name }} Top 200" border="0"&gt;&lt;/a&gt;&lt;br&gt;
-&lt;a href="{{ main_url }}dashboard/in/{{ _id }}" style="display: none;"&gt;&lt;img src="{{ main_url }}/track.gif" alt="{{ name }} Top 200 - Cheats Free Resources" border="0"&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;!--End Game Sites 200 Code--&gt;
-												</pre>
+&lt;p&gt;&lt;a href="{{ main_url }}/dashboard/in/{{ _id }}"&gt;&lt;img src="{{ main_url }}{{ url }}/vote.gif" alt="Vote on the {{ name }} Top 200" border="0"&gt;&lt;/a&gt;&lt;br&gt;
+&lt;a href="{{ main_url }}/dashboard/in/{{ _id }}" style="display: none;"&gt;&lt;img src="{{ main_url }}/track.gif" alt="{{ name }} Top 200 - Cheats Free Resources" border="0"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;!--End Game Sites 200 Code--&gt;</pre>
 											</div>
 										</div>
 									</div>
 								</div>
-							</div><br>
+							</div><hr />
 
-							{{ /game }}
 							{{ /server }}
+
+							<h3>Banner</h3><hr />
+							<div class="row">
+								<div class="col-xs-3"></div>
+								<div class="col-xs-9">
+									<div class="banner">
+										<h4><strong>Increase your site exposure with a Banner in Listing</strong></h4>
+
+										<p>Currently you do not have the banner in listing option enabled. By paying $10 per month you can have your site image displayed above your site 
+										(<strong>maximum size 468x60 pixels, 50KB file size</strong>). This advertising option is a great way to stand out on the top list and gain garner as much as a 
+										<strong>50% increase in clicks</strong>.</p>
+
+										<p>The entire system is automated using PayPal so there is absolutely no hassle in using it.</p>
+										
+										<p><strong>PLEASE NOTE:</strong> Once payment is complete (for users using an eCheck, it must first clear), it will take upto 90 minutes for the banner in listing to appear 
+										on the top list. Furthermore, any banner bigger than <strong>468x60 pixels</strong> or <strong>50KB</strong> file size is automatically removed by the system. Please ensure 
+										that your banner is not bigger than that, and that it is either of type GIF, JPEG, or PNG.</p>
+
+										<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+											<input type="hidden" name="item_name" value="{{ game }}">
+											<input type="hidden" name="item_number" value="896">
+											<input type="hidden" name="cmd" value="_ext-enter">
+											<input type="hidden" name="redirect_cmd" value="_xclick">
+											<input type="hidden" name="return" value="http://www.gamesites200.com/thanks.php">
+											<input type="hidden" name="cancel_return" value="http://www.gamesites200.com/">
+											<input type="hidden" name="business" value="paypal@gamesites200.com">
+											<input type="hidden" name="amount" value="10">
+											<input type="hidden" name="notify_url" value="http://ipn.gamesites200.com/ipn.php">
+											<input type="hidden" name="no_note" value="1">
+											<input type="hidden" name="currency_code" value="USD">
+											<button type="submit" class="btn btn-info"><strong>Purchase Banner in Listing &raquo;</strong></button>
+										</form>
+									</div>
+								</div>
+							</div><hr />
+							
+							<h3>Exclusive Advertisements</h3><hr />
+							<div class="row">
+								<div class="col-xs-3"></div>
+								<div class="col-xs-9">
+									<div class="advertisements">salap</div>
+								</div>
+							</div><hr />
 							<!-- PAGE CONTENT ENDS -->
 						</div><!-- /.col -->
 					</div><!-- /.row -->

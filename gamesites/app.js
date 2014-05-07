@@ -10,6 +10,7 @@ var express = require('express'),
     redis = require('redis').createClient(),
     app = module.exports = express();
 
+
 // var routes = require('./routes');
 // var users = require('./routes/user');
 
@@ -40,6 +41,7 @@ app.use(app.router);
 // app.get('/users', users.list);
 
 require('./routes');
+
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
@@ -80,3 +82,9 @@ app.set('port', process.env.PORT || 3000);
 var server = app.listen(app.get('port'), function() {
   debug('Express server listening on port ' + server.address().port);
 });
+
+//Socket IO
+// var io = require('socket.io').listen(server);
+// io.sockets.on('connection', function (socket) {
+//     socket.emit('test', { msg: 'test' });
+// });

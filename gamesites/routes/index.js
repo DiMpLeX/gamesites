@@ -1,4 +1,5 @@
 app = require('../app');
+
 var myModule = require('../myModule.js');
 
 var fs = require('fs');
@@ -12,6 +13,29 @@ var ObjectId = require('mongojs').ObjectId;
 app.locals({
     title: 'GAME SITES 200 - Top Gaming Game Sites',
     main_url: 'http://localhost:3000'
+});
+
+app.get('/dashboard', function(req, res) {
+    var sess = req.session;
+
+    // If no Session is Set
+    if( req.path != '/dashboard' || sess.username && sess.user_id) {
+        // Query the DB using the Username and ID
+        db.servers.findOne({ username: sess.username, _id: ObjectId(sess.user_id) }, function(err, result) {
+            // Render the Page
+            res.render('back/dashboard', {
+                title: app.locals.title,
+                main_url: app.locals.main_url,
+                meta_content: 'Gamesites200 Dashboard',
+                user: result, // Put the Result in the Variable
+                partials: { 
+                    header: 'header',
+                    footer: 'footer'
+                }
+            });
+        });
+    // Redirect
+    } else { res.redirect('/login'); }
 });
 
 app.get('/', function(req, res) {
@@ -164,29 +188,6 @@ app.get('/logout', function(req, res) {
     res.redirect(app.locals.main_url);
 });
 
-app.get('/dashboard', function(req, res) {
-    var sess = req.session;
-
-    // If no Session is Set
-    if( req.path != '/dashboard' || sess.username && sess.user_id) {
-        // Query the DB using the Username and ID
-        db.servers.findOne({ username: sess.username, _id: ObjectId(sess.user_id) }, function(err, result) {
-            // Render the Page
-            res.render('back/dashboard', {
-                title: app.locals.title,
-                main_url: app.locals.main_url,
-                meta_content: 'Gamesites200 Dashboard',
-                user: result, // Put the Result in the Variable
-                partials: { 
-                    header: 'header',
-                    footer: 'footer'
-                }
-            });
-        });
-    // Redirect
-    } else { res.redirect('/login'); }
-});
-
 app.get('/dashboard/add', function(req, res) {
     var sess = req.session;
 
@@ -252,20 +253,19 @@ app.get('/dashboard/sites/:server', function(req, res) {
         }, function(err, server) {
             if(server.site_details) {
                 db.categories.findOne({ _id: ObjectId(server.site_details[0]['game_parent']) }, 
-                    function(err, game_parent) {
-                        res.render('back/sites', {
-                            title: app.locals.title,
-                            main_url: app.locals.main_url,
-                            meta_content: 'Gamesites200 Sites',
-                            user: result,
-                            game: game_parent,
-                            server: server.site_details,
-                            partials: { 
-                                header: 'header',
-                                footer: 'footer'
-                            }
-                        });
-                    console.log(game_parent);
+                function(err, game_parent) {
+                    res.render('back/sites', {
+                        title: app.locals.title,
+                        main_url: app.locals.main_url,
+                        meta_content: 'Gamesites200 Sites',
+                        user: result,
+                        game: game_parent.name,
+                        server: server.site_details,
+                        partials: { 
+                            header: 'header',
+                            footer: 'footer'
+                        }
+                    });
                 });
             }
             else { res.redirect('/dashboard'); }
@@ -289,6 +289,7 @@ app.post('/dashboard/reg_server', function(req, res) {
                             site_email: user.site_email,
                             site_url: user.site_url,
                             site_desc: user.site_desc,
+                            site_banner: '',
                             game_parent: user.gamescategory,
                             game_name: parent.name,
                             game_url: parent.url,
@@ -297,19 +298,44 @@ app.post('/dashboard/reg_server', function(req, res) {
                         }
                     }
                 }, function(err, result) {
-                    res.redirect(app.locals.main_url +'/dashboard/confirm'+ parent.url + id);
+                    res.redirect(app.locals.main_url + '/dashboard/confirm' + parent.url + id);
             });
         });
     } else { res.redirect('/login'); }
 });
 
-//TODO
 app.post('/dashboard/update_server', function(req, res) {
     var user = req.body;
     var sess = req.session;
 
     if(sess.username && sess.user_id) {
-        res.send('salap');
+        db.servers.findOne({ _id: ObjectId(sess.user_id), username: sess.username },
+        { site_details: 
+            { $elemMatch: 
+                { _id: ObjectId(user.id) }
+            }
+        }, function(err, get_server) {
+            if( !get_server.site_details || err ) {
+                res.redirect('/login'); 
+            }
+
+            var server_id = get_server.site_details[0]['_id'];
+
+            db.servers.update(
+            { username: sess.username, 'site_details._id': server_id }, 
+            { $set: 
+                { 
+                    'site_details.$.site_name': user.site_name,
+                    'site_details.$.site_email': user.site_email,
+                    'site_details.$.site_url': user.site_url,
+                    'site_details.$.site_desc': user.site_desc,
+                    'site_details.$.site_banner': user.site_banner
+                }
+            }, function(err, server) {
+                res.redirect(app.locals.main_url + '/dashboard/sites/' + user.site_name);
+            });
+            // console.log(get_server);
+        });
     } else { res.redirect('/login'); }
 });
 
