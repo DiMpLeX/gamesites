@@ -243,34 +243,36 @@ app.get('/dashboard/confirm/:category/:id', function(req, res) {
 app.get('/dashboard/sites/:server', function(req, res) {
     var sess = req.session;
 
-    db.servers.findOne({ username: sess.username, _id: ObjectId(sess.user_id) }, function(err, result) {
-        // Get the Array Values of the selected Server
-        db.servers.findOne({ username: result.username },
-        { site_details:
-            { $elemMatch: 
-                { site_name: req.params.server } 
-            }
-        }, function(err, server) {
-            if(server.site_details) {
-                db.categories.findOne({ _id: ObjectId(server.site_details[0]['game_parent']) }, 
-                function(err, game_parent) {
-                    res.render('back/sites', {
-                        title: app.locals.title,
-                        main_url: app.locals.main_url,
-                        meta_content: 'Gamesites200 Sites',
-                        user: result,
-                        game: game_parent.name,
-                        server: server.site_details,
-                        partials: { 
-                            header: 'header',
-                            footer: 'footer'
-                        }
+    if(sess.username && sess.user_id) {
+        db.servers.findOne({ username: sess.username, _id: ObjectId(sess.user_id) }, function(err, result) {
+            // Get the Array Values of the selected Server
+            db.servers.findOne({ username: result.username },
+            { site_details:
+                { $elemMatch: 
+                    { site_name: req.params.server } 
+                }
+            }, function(err, server) {
+                if(server.site_details) {
+                    db.categories.findOne({ _id: ObjectId(server.site_details[0]['game_parent']) }, 
+                    function(err, game_parent) {
+                        res.render('back/sites', {
+                            title: app.locals.title,
+                            main_url: app.locals.main_url,
+                            meta_content: 'Gamesites200 Sites',
+                            user: result,
+                            game: game_parent.name,
+                            server: server.site_details,
+                            partials: { 
+                                header: 'header',
+                                footer: 'footer'
+                            }
+                        });
                     });
-                });
-            }
-            else { res.redirect('/dashboard'); }
+                }
+                else { res.redirect('/dashboard'); }
+            });
         });
-    });
+    } else { res.redirect('/login'); }
 });
 
 app.post('/dashboard/reg_server', function(req, res) {

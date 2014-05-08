@@ -35,7 +35,7 @@ a:visited, a:link { color: #2293d4; text-decoration: none; }
 a:hover { color: #006699; text-decoration: underline; }
 
 i { font-style: italic; }
-p { font-size: 12px; line-height: 1.3em; margin-bottom: 12px; }
+p { font-size: 12px; line-height: 1.5em; margin-bottom: 12px; }
 
 strong, b { font-weight: bold; }
 
@@ -281,6 +281,17 @@ header {
 	resize: horizontal; 
 	word-wrap: break-word; 
 }
+
+.sites .advertisements .widget-box .widget-body form {
+	background-color: #f5f5f5;
+	border: 1px solid #ccc;
+	padding: 20px;
+}
+.sites .advertisements .widget-box .widget-body form input[type="number"] { padding-bottom: 6px; padding-top: 7px; }
+.sites .advertisements .widget-box .widget-body form input[type="number"] + i { top: 4px; }
+.sites .advertisements .widget-box .widget-body form button[type="submit"] { vertical-align: top; }
+
+.sites .advertisements .widget-box .widget-body img { display: block; margin: 0 auto; }
 
 /* Footer
 ---------------------------------------------------------------*/
