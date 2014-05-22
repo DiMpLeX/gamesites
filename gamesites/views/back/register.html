@@ -1,0 +1,125 @@
+{{ >header }}
+
+<section class="register login-layout">
+	<div class="main-container">
+		<div class="main-content">
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-1">
+					<div class="logo center">
+						<h1>
+							<a href="/" alt="GAME SITES 200 - Top Gaming Game Sites" class="logo">
+								<img src="/images/logo.png">
+							</a>
+						</h1>
+					</div>
+					<div class="login-container">
+						<div class="space-6"></div>
+
+						<div class="position-relative">
+							<div id="signup-box" class="signup-box visible widget-box no-border">
+								<div class="widget-body">
+									<div class="widget-main">
+										<h4 class="header green lighter bigger">
+											<i class="icon-group blue"></i>
+											New User Registration
+										</h4>
+
+										<div class="space-6"></div>
+
+										{{ #exist_error }}
+											<h1>Account already exist.</h1>
+										{{ /exist_error }}
+
+										<p> Enter your details to begin: </p>
+										
+										<form method="POST" action="/join/signup" id="register">
+											<fieldset>
+												<label class="block clearfix">
+													<span class="block input-icon input-icon-right">
+														<input type="email" class="form-control" placeholder="Email"  name="email" required />
+														<i class="icon-envelope"></i>
+													</span>
+												</label>
+
+												<label class="block clearfix">
+													<span class="block input-icon input-icon-right">
+														<input type="text" class="form-control" placeholder="Username" name="username" required />
+														<i class="icon-user"></i>
+													</span>
+												</label>
+
+												<label class="block clearfix">
+													<span class="block input-icon input-icon-right">
+														<input type="password" class="form-control" placeholder="Password" name="password" />
+														<i class="icon-lock"></i>
+													</span>
+												</label>
+
+												<label class="block clearfix">
+													<span class="block input-icon input-icon-right">
+														<input type="password" class="form-control" placeholder="Repeat password" name="repeat_password" required />
+														<i class="icon-retweet"></i>
+													</span>
+												</label>
+											</fieldset>
+
+											<label class="block">
+												<input type="checkbox" class="ace" id="user_agreement" value="accepted" />
+												<span class="lbl">
+													I accept the
+													<a href="/join/toa">User Agreement</a>
+												</span>
+											</label>
+
+											<div class="space-24"></div>
+
+											<div class="clearfix">
+												<button type="reset" class="width-30 pull-left btn btn-sm">
+													<i class="icon-refresh"></i>
+													Reset
+												</button>
+
+												<button type="submit" class="width-65 pull-right btn btn-sm btn-success">
+													Register
+													<i class="icon-arrow-right icon-on-right"></i>
+												</button>
+											</div>
+										</form>
+									</div>
+
+									<div class="toolbar center">
+										<a href="/login" class="back-to-login-link">
+											<i class="icon-arrow-left"></i>
+											Back to login
+										</a>
+									</div>
+								</div><!-- /widget-body -->
+							</div><!-- /signup-box -->
+						</div><!-- /position-relative -->
+					</div>
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</div>
+	</div><!-- /.main-container -->
+</section>
+
+<script type="text/javascript">
+	$('#register').submit(function(e) {
+		var pass = $('input[name="password"]').val();
+		var repeat_pass = $('input[name="repeat_password"]').val();
+
+		// Repeat Password
+		if( pass != repeat_pass ) {
+			alert('Please Confirm Password!');
+			e.preventDefault();
+		}
+
+		//TODO
+		if( !$('input[type="checkbox"]').is(':checked') ) {
+			alert('Accept the User Agreement');
+			e.preventDefault();
+		}
+	});
+</script>
+
+{{ >footer }}

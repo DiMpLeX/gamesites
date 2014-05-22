@@ -95,6 +95,7 @@ header {
 	letter-spacing: 0;
 	line-height: 1.3em;
 	margin-bottom: 20px;
+	margin-top: 0;
 	text-align: center; 
 }
 
@@ -214,6 +215,14 @@ header {
 
 /* Private Server Details */
 .details table tbody tr td:first-child { font-weight: bold; }
+.details > h1, .details section:first-child h1 { padding: 10px 0px; }
+
+.details table thead tr th > h2 { 
+	font-family: 'Verdana';
+	font-size: 17px;
+	font-weight: bold;
+	margin: 0;
+}
 
 /* Terms of Agreement Page */
 .toa > div { 
@@ -291,7 +300,79 @@ header {
 .sites .advertisements .widget-box .widget-body form input[type="number"] + i { top: 4px; }
 .sites .advertisements .widget-box .widget-body form button[type="submit"] { vertical-align: top; }
 
-.sites .advertisements .widget-box .widget-body img { display: block; margin: 0 auto; }
+.sites .advertisements .widget-box .widget-body img { 
+	display: block; 
+	height: auto;
+	margin: 0 auto; 
+	max-width: 100%;
+}
+
+/* Contact */
+.contact ul { list-style: disc outside none; margin-left: 40px; line-height: 1.7em; }
+
+.contact form { margin-top: 30px; }
+.contact form > div { margin-bottom: 5px; }
+.contact form label {
+	display: inline-block;
+	min-width: 70px;
+	vertical-align: top;
+}
+.contact form input[type="submit"] { cursor: pointer; }
+
+/* Forgot */
+.forgot .social-or-login {
+	margin-bottom: 15px;
+	margin-top: 4px;
+	position: relative;
+	z-index: 1;
+}
+
+.forgot .social-or-login:before {
+	content: "";
+	display: block;
+	position: absolute;
+	z-index: -1;
+	top: 50%;
+	left: 0;
+	right: 0;
+	border-top: 1px dotted #a6c4db;
+}
+
+.forgot .social-or-login :first-child {
+	display: inline-block;
+	background: #f7f7f7;
+	padding: 0 8px;
+	color: #5090c1;
+	font-size: 13px;
+}
+
+/* Advertise */
+.advertise .red { color: red; }
+.advertise h2 {
+	color: #777;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.ad-cont { 
+	width: 90%; 
+	margin: 30px auto;
+}
+
+.ad-cont blockquote { margin-top: 20px; }
+
+.ad-cont .border {
+	background-color: #DDD;
+	border: 1px dashed #000;
+	padding: 5px;
+}
+
+.ad-cont img {
+	display: block;
+	height: auto;
+	margin: 30px auto;
+	max-width: 100%;
+}
 
 /* Footer
 ---------------------------------------------------------------*/

@@ -1,0 +1,45 @@
+{{ >header }}
+
+	<section class="contact">
+		<h1>{{ header }}</h1>
+		<p>Need to contact us? For whatever reason, just fill out this form, click send, 
+		and your message will be winging through the internet to us. We will try to get 
+		back to you asap... if we need to.</p>
+
+		<p><strong>NOTE:</strong> Before you submit, please note the following:</p>
+
+		<ul>
+			<li>Want to sign up? <a href="/join/toa">Join Here</a></li>
+			<li><strong>Forgot your login?</strong> <a href="#">Click here</a>. Click on the game your site is listed for, enter in your email, and your site ID and password will be emailed to you.</li>
+			<li>Was your site listed and is now gone? If you had hacks/cracks/etc - its not coming back. If you were using a voting stone, remove it first.</li>
+			<li>Want a banner to appear in your listing? Order it here: <a href="#">banner in listing</a>.</li>
+			<li>Inquiring about other types of advertising, read this first: <a href="#">Game Sites 200 Advertising Options</a>.</li>
+			<li>Did you purchase a banner and it has not appeared after 30 minutes? Make sure your banner conforms to the ad requirements of 468x60 pixels and a max file size of 50KB.</li>
+			<li>WE DO NOT OFFER SUPPORT on the actual websites. We only link to them. If a site is not working, contact them, not us.</li>
+			<li>Please use ENGLISH in contacting us as we are not able to translate non-English messages.</li>
+		</ul>
+		<p>If you contact us about any of the above without having read it we <strong>will not reply.</strong></p>
+
+		<form method="POST" action="#">
+			<div>
+				<label>Name: </label>
+				<input type="text" name="name"/>
+			</div>
+			
+			<div>
+				<label>Email: </label>
+				<input type="email" name="email" />
+			</div>
+
+			<div>
+				<label>Message: </label>
+				<textarea name="message" rows="8" cols="30"></textarea>
+			</div>
+			<div>
+				<label></label>
+				<input type="submit" value="Send Message &raquo;">
+			</div>
+		</form>
+	</section>
+
+{{ >footer }}

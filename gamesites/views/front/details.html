@@ -2,7 +2,7 @@
 
 	<section class="main details">
 		{{ #result }}
-		<h1>{{ name }} ({{ parent_name }})</h1>
+		<h1>{{ game_name }} ({{ site_name }})</h1>
 		<table cellpadding="5" cellspacing="0">
 			<thead>
 				<tr>
@@ -48,6 +48,9 @@
 				</tr>
 			</tbody>
 		</table>
+		{{ /result }}
+		{{ ^result }}
+			<h1>No result Found!</h1>
 		{{ /result }}
 	</section>
 	{{ >sidebar }}

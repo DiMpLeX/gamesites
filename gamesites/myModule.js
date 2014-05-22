@@ -87,7 +87,7 @@ module.exports.encryptPass = encryptPass;
 // 		console.log('No DB Found!');
 // 		res.send(404);
 // 	} else { 
-// 		console.log(result)
+// 		console.log(result);
 // 		res.render('join', {
 // 			partials: { 
 // 				header: 'header', 

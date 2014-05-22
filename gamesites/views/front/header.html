@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>{{title}}</title>
+		<title>{{ title }}</title>
 		<link rel="stylesheet" href="/stylesheets/reset.css">
+		<link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
 		<link rel="stylesheet" href="/stylesheets/style.css">
-		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="shorcut icon" type="image/x-ico" href="/images/favicon.ico">
 	</head>
@@ -18,13 +18,13 @@
 						</a>
 					</h1>
 					<ul class="menu">
-						<li><a href="/">Home</a></li>
+						<li><a href="{{ main_url }}/">Home</a></li>
 						<li><a href="{{ main_url }}/how">How It Works</a></li>
-						<li><a href="{{ main_url }}/join/toa">Register</a></li>
+						<li><a href="{{ main_url }}/join">Register</a></li>
 						<li><a href="{{ main_url }}/login">Login</a></li>
-						<li><a href="/">Forget Info</a></li>
-						<li><a href="/">Contact</a></li>
-						<li><a href="/">Advertise</a></li>
+						<li><a href="{{ main_url }}/forgot">Forget Info</a></li>
+						<li><a href="{{ main_url }}/contact">Contact</a></li>
+						<li><a href="{{ main_url }}/advertise">Advertise</a></li>
 					</ul>
 				</header>
 				<div class="content">
